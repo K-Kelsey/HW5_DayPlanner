@@ -31,10 +31,10 @@ body {
     text-align: center;
     border-radius: 15px;
   }
-  .save-btn {
+  .save-btn, button {
     background-color: #06aed5;
-    border: none;
-    outline: none;
+    border: transparent;
+    outline: transparent;
   }
 
   i  {
@@ -43,7 +43,7 @@ body {
     font-size: 30px;
     height: 30px;
     align-items: center;
-    
+    min-height: 25px;
 }
 
   .row {
@@ -90,7 +90,8 @@ body {
   
   .saveBtn i:hover {
     font-size: 20px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    
   
   }
 

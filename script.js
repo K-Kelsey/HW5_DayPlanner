@@ -3,37 +3,39 @@ function init(){
 const grid = $(".container")
 const saveButton = document.getElementById('save-btn')
 const inpValue = document.getElementById("eventText")
-
+const rows = document.getElementsByClassName("row");
+let m = moment();
 var today = moment().format("MMM Do, YYYY, h:mm:ss a");
 $("#moment").text('Today is: ' + today);
-
-var row = document.getElementById("addEvent")
-
-let m = moment();
 var hourPast = hourPast < m;
 var hourNow = m;
 var hourFuture = hourFuture < m;
+
+let currentHour = parseInt(moment().format('H'));
+
+console.log(hourNow)
+console.log(m)
+
 
 // if currentTime > hourNow make background color gray
 
     //changes color but will not recognize the container
 
-Array.from(rows).forEach(row => {
-var hourNow = m;
-console.log(hourNow)
-console.log(m)
-    function backgroundColorEdit(){
-        if (hourNow == m){
-            document.getElementsByClassName("container").style.backgroundColor = "#d3d3d3";
-        }else if (hourNow < m){
-            document.getElementsByClassName("container").style.backgroundColor = "#ff0000";
-        }else 
-        {
-            document.getElementsByClassName("container").style.backgroundColor = "#90ee90";
-        }
-}
- backgroundColorEdit();
-});
+// Array.from(rows).forEach(row => {
+// var hourNow = m;
+
+//     function backgroundColorEdit(){
+//         if (hourNow == m){
+//             document.getElementsByClassName("container").style.backgroundColor = "#d3d3d3";
+//         }else if (hourNow < m){
+//             document.getElementsByClassName("container").style.backgroundColor = "#ff0000";
+//         }else 
+//         {
+//             document.getElementsByClassName("container").style.backgroundColor = "#90ee90";
+//         }
+// }
+//  backgroundColorEdit();
+// });
 
 //changes color according to time box but is not 
 
@@ -42,11 +44,12 @@ console.log(m)
 
 Array.from(rows).forEach(row => {
     let
-      rowIdString = row.id,
+      rowIdString = row.getElementsByClassName('.hour'),
       rowHour;
     if (rowIdString) {
       rowHour = parseInt(rowIdString);
     }
+    for(i=0; i<rowIdString.length; i++) {
     if (rowHour) {
       // Compares row id to current hour and sets color accordingly
       if (currentHour === rowHour) {
@@ -59,14 +62,24 @@ Array.from(rows).forEach(row => {
         setColor(row, "white");
       }
     }
+    }
   });
 
  //display event to screen from local storage
 
     //having issues, the event is saved to local storage but will not display
-    
+
 function update_Event(){
+    let newArr = []
     var eventArray = JSON.parse(localStorage.getItem("name")) || [];
+    
+    for (let i = 0; i < grid.length; i++) {
+        if (inpValue[i].text === string) {
+          newArr.push(inpValue[i].value)
+        }
+        return newArr;
+      }
+    
     $(document).ready(); {
         display(); {
         localStorage.content = $('#eventText').html('');
@@ -80,8 +93,7 @@ function update_Event(){
 }
 
 
-const rows = document.getElementsByClassName("row");
-let currentHour = parseInt(moment().format('H'));
+
 
 
 
