@@ -42,6 +42,8 @@ body {
     margin-left: 7px;
     font-size: 30px;
     height: 30px;
+    min-height: 29px;
+    min-width: 26px;
     align-items: center;
     min-height: 25px;
 }
@@ -89,12 +91,9 @@ body {
   }
   
   .saveBtn i:hover {
-    font-size: 20px;
-    transition: all 0.5s ease-in-out;
-    
+    color: whitesmoke;
   
   }
-
   button {
     background-color: #06aed5;
     border: none;
